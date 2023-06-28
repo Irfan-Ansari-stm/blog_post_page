@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #04f03f;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Python</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Java</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">C++</button>
+</div>
+<!--python start-->
+<div id="London" class="tabcontent">
+<pre><code class="python" style="font-size:15px;">    
+
+  def searchInsert(nums, target):
+  left, right = 0, len(nums) - 1
+
+  while left <= right:
+      mid = (left + right) // 2
+      if nums[mid] == target:
+          return mid
+      elif nums[mid] < target:
+          left = mid + 1
+      else:
+          right = mid - 1
+
+  return left
+
+  nums = [1, 3, 5, 6]
+  target = 5
+  print(searchInsert(nums, target))
+
+
+
+
+</code></pre>
+
+<p style="font-size:15px;">
+
+  Explanation (Python): <br><br>
+
+  The Python solution utilizes a binary search algorithm to find the insertion position of the target element in the sorted array.<br><br>
+  Initialize two pointers, left and right, representing the left and right boundaries of the search range.<br><br>
+  Iterate until left becomes greater than right.<br><br>
+  Find the middle element using (left + right) // 2.<br><br>
+  If the middle element is equal to the target, return the index mid.<br><br>
+  If the middle element is less than the target, update the left pointer to mid + 1 to search the right half.<br><br>
+  If the middle element is greater than the target, update the right pointer to mid - 1 to search the left half.<br><br>
+  After the loop ends, return the value of left as the insertion position of the target element.<br><br>
+
+</p>
+</div>
+<!--python end-->
+
+
+<!--java start-->
+<div id="Paris" class="tabcontent">
+<pre><code class="java" style="font-size:15px;">
+         
+  class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return left;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 5, 6};
+        int target = 5;
+        Solution solution = new Solution();
+        System.out.println(solution.searchInsert(nums, target));
+    }
+  }
+
+
+
+
+</code></pre>
+
+  <p style="font-size:15px;">
+   
+    Explanation (Java): <br><br>
+
+    The Java solution follows a similar binary search approach as the Python solution to find the insertion position of the target element in the sorted array.<br><br>
+    Initialize two pointers, left and right, representing the left and right boundaries of the search range.<br><br>
+    Perform the binary search until left becomes greater than right.<br><br>
+    Find the middle element using left + (right - left) / 2.<br><br>
+    If the middle element is equal to the target, return the index mid.<br><br>
+    If the middle element is less than the target, update the left pointer to mid + 1 to search the right half.<br><br>
+    If the middle element is greater than the target, update the right pointer to mid - 1 to search the left half.<br><br>
+    After the loop ends, return the value of left as the insertion position of the target element.<br><br>
+    
+    
+   <p>
+  
+</div>
+<!--java end-->
+
+
+<!--c++ start-->  
+<div id="Tokyo" class="tabcontent">
+  
+<pre><code class="cpp" style="font-size:15px;">
+         
+              #include &lt;iostream&gt;
+              #include &lt;vector&gt;
+              using namespace std;
+              
+              class Solution {
+              public:
+                  int searchInsert(vector<int>& nums, int target) {
+                      int left = 0;
+                      int right = nums.size() - 1;
+              
+                      while (left <= right) {
+                          int mid = left + (right - left) / 2;
+                          if (nums[mid] == target) {
+                              return mid;
+                          } else if (nums[mid] < target) {
+                              left = mid + 1;
+                          } else {
+                              right = mid - 1;
+                          }
+                      }
+              
+                      return left;
+                  }
+              };
+              
+              int main() {
+                  vector<int> nums = {1, 3, 5, 6};
+                  int target = 5;
+                  Solution solution;
+                  cout << solution.searchInsert(nums, target) << endl;
+                  return 0;
+              }
+              
+          
+    
+    
+        
+        
+
+</code></pre>
+
+  <p style="font-size:15px;">
+
+    Explanation (C++): <br><br>
+
+    The C++ solution also uses a binary search algorithm to find the insertion position of the target element in the sorted array. <br><br>
+    Initialize two pointers, left and right, representing the left and right boundaries of the search range.<br><br>
+    Perform the binary search until left becomes greater than right.<br><br>
+    Find the middle element using left + (right - left) / 2.<br><br>
+    If the middle element is equal to the target, return the index mid.<br><br>
+    If the middle element is less than the target, update the left pointer to mid + 1 to search the right half.<br><br>
+    If the middle element is greater than the target, update the right pointer to mid - 1 to search the left half.<br><br>
+    After the loop ends, return the value of left as the insertion position of the target element.<br><br>
+      
+
+</p>
+  
+</div>
+<!--c++ end-->>
+  
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  
+// Show the first tab by default
+document.getElementById("London").style.display = "block";
+document.getElementsByClassName("tablinks")[0].className += " active";
+</script>
+   
+</body>
+</html>
